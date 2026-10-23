@@ -1,5 +1,6 @@
 import pytest
 import pyotp
+pytestmark = [pytest.mark.utils, pytest.mark.classes, pytest.mark.order(6)]
 
 def test_secretworks():
     secret = pyotp.random_base32()
