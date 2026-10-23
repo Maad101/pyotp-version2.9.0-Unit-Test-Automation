@@ -1,5 +1,6 @@
 import pytest
 import pyotp
+pytestmark = [pytest.mark.totp, pytest.mark.classes, pytest.mark.order(5)]
 
 def test_genverify():
     totp = pyotp.TOTP("GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ")
