@@ -1,6 +1,7 @@
 import datetime
 import pytest
 import pyotp
+pytestmark = [pytest.mark.totp, pytest.mark.functions, pytest.mark.order(2)]
 
 def test_vcrrt():
     totp = pyotp.TOTP("GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ")
