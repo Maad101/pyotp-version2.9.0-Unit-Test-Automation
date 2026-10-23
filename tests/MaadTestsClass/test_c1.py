@@ -1,5 +1,6 @@
 import pytest
 import pyotp
+pytestmark = [pytest.mark.hotp, pytest.mark.classes, pytest.mark.order(4)]
 
 def test_gennver():
     hotp = pyotp.HOTP("GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ")
