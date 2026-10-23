@@ -3,6 +3,7 @@ import pytest
 import pyotp
 pytestmark = [pytest.mark.totp, pytest.mark.functions, pytest.mark.order(2)]
 
+@pytest.mark.smoke
 def test_vcrrt():
     totp = pyotp.TOTP("GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ")
     now = datetime.datetime(2026, 10, 23, 12, 0, 0)
@@ -14,6 +15,7 @@ def test_vwrg():
     now = datetime.datetime(2026, 10, 23, 12, 0, 0)
     assert totp.verify("000000", for_time=now) == False
 
+@pytest.mark.order(before="test_vcrrt")
 def test_vOldWindow0():
     totp = pyotp.TOTP("GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ")
     now = datetime.datetime(2026, 10, 23, 12, 0, 0)

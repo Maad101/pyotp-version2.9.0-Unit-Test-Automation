@@ -3,6 +3,7 @@ import pytest
 import pyotp
 pytestmark = [pytest.mark.hotp, pytest.mark.functions, pytest.mark.order(1)]
 
+@pytest.mark.smoke
 def test_count():
     hotp = pyotp.HOTP("GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ")
     assert hotp.at(0) == "755224"
@@ -29,3 +30,8 @@ def test_md5digest():
     hotp = pyotp.HOTP("GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ", digest=hashlib.md5)
     with pytest.raises(ValueError):
         hotp.at(0)
+
+@pytest.mark.parametrize("counter, code", [(3, "969429"), (4, "338314"), (5, "254676"), (6, "287922")])
+def test_countparam(counter, code):
+    hotp = pyotp.HOTP("GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ")
+    assert hotp.at(counter) == code
