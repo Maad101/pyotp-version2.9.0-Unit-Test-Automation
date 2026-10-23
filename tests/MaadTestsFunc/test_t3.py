@@ -1,5 +1,6 @@
 import pytest
 import pyotp
+pytestmark = [pytest.mark.utils, pytest.mark.functions, pytest.mark.order(3)]
 
 def test_defaultlen():
     secret = pyotp.random_base32()
