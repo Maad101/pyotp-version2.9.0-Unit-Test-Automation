@@ -1,6 +1,7 @@
 import hashlib
 import pytest
 import pyotp
+pytestmark = [pytest.mark.hotp, pytest.mark.functions, pytest.mark.order(1)]
 
 def test_count():
     hotp = pyotp.HOTP("GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ")
