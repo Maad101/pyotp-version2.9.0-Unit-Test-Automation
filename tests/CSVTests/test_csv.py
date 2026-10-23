@@ -1,6 +1,7 @@
 import csv
 import pytest
 import pyotp
+pytestmark = [pytest.mark.csvdata, pytest.mark.order(7)]
 
 def read_csv(path):
     with open(path) as file:
