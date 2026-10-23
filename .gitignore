@@ -1,0 +1,31 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# pytest
+.pytest_cache/
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Coverage reports
+.coverage
+htmlcov/
+
+# Build files
+build/
+dist/
+*.egg-info/
+
+# VS Code settings
+.vscode/
+
+# Excel temporary lock files
+~$*.xlsx
+
+# OS files
+Thumbs.db
+desktop.ini
+.DS_Store
